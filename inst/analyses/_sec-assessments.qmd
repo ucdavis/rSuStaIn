@@ -14,7 +14,7 @@ Disorders
 (SCID-I/NP),
 motor testing,
 and brain MRI
-[@johnson2022fxtas_by_sex;
+[@johnson2022increased;
 @winarni2024apolipoproteine;
 @elias2024enlarged].
 After the clinical and MRI evaluation,

@@ -22,7 +22,7 @@ probs =
 
 We assumed that missing `r outcomes_name` data
 were missing at random (MAR)
-[@rubin1976inference, @little2019statistical].
+[@rubin1976inference; @little2019statistical].
 As the longitudinal cohorts evolved over time,
 new instruments were adopted and added;
 much of the missingness was due to
