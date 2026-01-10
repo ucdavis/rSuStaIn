@@ -5,7 +5,7 @@ figs <- extract_figs_from_pickle(
   n_s = 3,
   rda_filename = "data.RData",
   dataset_name = "sample_data",
-  output_folder = fs::path_package("extdata/sim_data", package = "fxtas")
+  output_folder = fs::path_package("extdata/sim_data", package = "rSuStaIn")
 )
 
 y_text_size <- 11

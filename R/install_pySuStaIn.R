@@ -1,12 +1,12 @@
 #' @title Install the `pySuStaIn` python package from github
 #' @description
-#' This function is a wrapper for [reticulate::conda_install].
+#' This function is a wrapper for [reticulate::py_install].
 #' Its implementation follows the instructions in:
 #' - https://rstudio.github.io/reticulate/articles/package.html
 #' - https://rstudio.github.io/reticulate/articles/python_dependencies.html
 #' @details
 #' ## `python_version`
-#' `pySuStaIn` and its dependency `kde_ebm` currently (2024-02-14) do not appear to be  with python >= 3.10.
+#' `pySuStaIn` and its dependency `kde_ebm` currently (2024-02-14) do not appear to be compatible with python >= 3.10.
 #' ## `pip`
 #' `pip = TRUE` appears to be necessary,
 #' since `pySuStaIn` needs to be installed directly from <github.com>
@@ -21,10 +21,11 @@ install_pySuStaIn <- function(
     python_version = "<3.10",
     method = "auto",
     pip = TRUE,
+    packages = "git+https://github.com/ucl-pond/pySuStaIn",
     ...)
 {
   reticulate::py_install(
-    packages = "git+https://github.com/d-morrison/pySuStaIn",
+    packages = packages,
     envname = envname,
     pip = pip,
     python_version = python_version,

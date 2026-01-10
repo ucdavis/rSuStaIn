@@ -1,57 +1,74 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# fxtas
+# rSuStaIn
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/UCD-IDDRC/fxtas/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UCD-IDDRC/fxtas/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/ucdavis/rSuStaIn/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ucdavis/rSuStaIn/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/UCD-IDDRC/fxtas/graph/badge.svg)](https://app.codecov.io/gh/UCD-IDDRC/fxtas)
+coverage](https://codecov.io/gh/ucdavis/rSuStaIn/graph/badge.svg)](https://app.codecov.io/gh/ucdavis/rSuStaIn)
 <!-- badges: end -->
 
-The goal of `fxtas` is to apply the Ordinal SuStaIn algorithm (Young et
-al. (2021)) to study disease progression in fragile X-associated
-tremor/ataxia syndrome,  
-as described in Morrison et al (not yet published), “Progression of
-fragile X-associated tremor/ataxia syndrome revealed by subtype and
-stage inference”.
+The goal of `rSuStaIn` is to provide an R wrapper for the
+[pySuStaIn](https://github.com/ucl-pond/pySuStaIn) Python package, which
+implements the Subtype and Stage Inference (SuStaIn) algorithm (Young et
+al. (2021)). SuStaIn is an unsupervised learning algorithm that
+identifies disease subtypes and stages from cross-sectional data.
+
+This package includes:
+
+- Wrapper functions for installing and running pySuStaIn from R
+- Utilities for working with SuStaIn results
+- FXTAS (fragile X-associated tremor/ataxia syndrome) specific analysis
+  functions
 
 ## Installation
 
-You can install the development version of fxtas from
+You can install the development version of rSuStaIn from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("UCD-IDDRC/fxtas")
+devtools::install_github("ucdavis/rSuStaIn")
 ```
 
-## Running the analyses
+## Installing pySuStaIn
 
-The manuscript is implemented in the file `ordinal-sustain.qmd` in the
-`analyses` subfolder, which incorporates several subfiles in this
-repository. The `data-raw` folder contains numerous auxiliary scripts,
-including:
+After installing the R package, you need to install the pySuStaIn Python
+package:
 
-- data preprocessing scripts, which be run in the following order (after
-  extracting the necessary files from the GP, GP4, and Trax research
-  databases):
+``` r
+library(rSuStaIn)
+install_pySuStaIn()
+```
 
-  - `gp3.r`
-  - `gp4.r`
-  - `gp34.R`
-  - `trax.R`
+## Basic Usage
 
-- [SLURM](https://slurm.schedmd.com/documentation.html) batch scripts
-  and corresponding R scripts for pre-running the computation-heavy
-  sections of the analysis on an appropriately-preconfigured distributed
-  computing server.
+``` r
+library(rSuStaIn)
 
-If the corresponding output files have not been pre-generated,
-`ordinal-sustain.qmd` should produce them.
+# Run Ordinal SuStaIn Algorithm
+results <- run_OSA(
+  patient_data = your_data,
+  prob_correct = your_prob_correct,
+  SuStaInLabels = biomarker_names,
+  N_startpoints = 25,
+  N_S_max = 3
+)
+```
+
+## FXTAS Analysis
+
+This package also includes analysis functions specific to fragile
+X-associated tremor/ataxia syndrome (FXTAS), as described in Morrison et
+al (not yet published), "Progression of fragile X-associated
+tremor/ataxia syndrome revealed by subtype and stage inference".
+
+The FXTAS manuscript is implemented in the file `ordinal-sustain.qmd` in
+the `analyses` subfolder.
 
 # References
 
@@ -62,9 +79,9 @@ entry-spacing="0">
 
 Young, Alexandra L, Jacob W Vogel, Leon M Aksman, Peter A Wijeratne,
 Arman Eshaghi, Neil P Oxtoby, Steven CR Williams, Daniel C Alexander,
-and Alzheimer’s Disease Neuroimaging Initiative. 2021. “Ordinal SuStaIn:
+and Alzheimer's Disease Neuroimaging Initiative. 2021. "Ordinal SuStaIn:
 Subtype and Stage Inference for Clinical Scores, Visual Ratings, and
-Other Ordinal Data.” *Frontiers in Artificial Intelligence* 4: 613261.
+Other Ordinal Data." *Frontiers in Artificial Intelligence* 4: 613261.
 <https://doi.org/10.3389/frai.2021.613261>.
 
 </div>

@@ -1,13 +1,19 @@
-Package: fxtas
-Title: FXTAS
+Package: rSuStaIn
+Title: R Wrapper for Python 'pySuStaIn' Package
 Version: 0.0.0.9052
 Authors@R: c(
     person("Douglas Ezra", "Morrison", , "demorrison@ucdavis.edu", role = c("cre", "aut")),
     person("Matthew", "Ponzini", , "mdponzini@ucdavis.edu", role = c("aut")))
-Description: PKG_DESC.
+Description: Provides an R interface to the 'pySuStaIn' Python package 
+    (<https://github.com/ucl-pond/pySuStaIn>) for Subtype and Stage Inference (SuStaIn).
+    SuStaIn is an unsupervised learning algorithm that identifies disease subtypes
+    and stages from cross-sectional data. This package includes wrapper functions
+    for running SuStaIn analyses and utilities for working with SuStaIn results.
+    Also includes FXTAS (fragile X-associated tremor/ataxia syndrome) specific
+    analysis functions.
 License: MIT + file LICENSE
-URL: https://github.com/ucd-iddrc/fxtas, https://ucd-iddrc.github.io/fxtas/
-BugReports: https://github.com/ucd-iddrc/fxtas/issues
+URL: https://github.com/ucdavis/rSuStaIn, https://ucdavis.github.io/rSuStaIn/
+BugReports: https://github.com/ucdavis/rSuStaIn/issues
 Imports: 
     and,
     base,

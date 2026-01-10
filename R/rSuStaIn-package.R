@@ -1,6 +1,20 @@
 #' @keywords internal
 "_PACKAGE"
 
+#' @description
+#' rSuStaIn provides an R interface to the pySuStaIn Python package for 
+#' Subtype and Stage Inference (SuStaIn). SuStaIn is an unsupervised learning 
+#' algorithm that identifies disease subtypes and stages from cross-sectional data.
+#' 
+#' The main functions are:
+#' \itemize{
+#'   \item \code{\link{install_pySuStaIn}}: Install the pySuStaIn Python package
+#'   \item \code{\link{run_OSA}}: Run the Ordinal SuStaIn Algorithm
+#'   \item \code{\link{extract_results_from_pickle}}: Extract and format results from pickle files
+#' }
+#' 
+#' This package also includes FXTAS-specific analysis functions for backward compatibility.
+#'
 ## usethis namespace: start
 #' @importFrom colorspace qualitative_hcl
 #' @importFrom dplyr across

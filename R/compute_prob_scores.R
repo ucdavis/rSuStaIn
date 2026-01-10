@@ -4,6 +4,7 @@
 #' @param biomarker_varnames a [character()] vector of biomarker variable names
 #' @param ModelScores a vector of true score levels (max size among all biomarkers)
 #' @param prob_dist a vector of probabilities of correctly classifying a biomarker level
+#' @param id_var name of the column containing patient/subject IDs (default: "FXS ID")
 #' @inheritParams run_OSA
 #' @inheritDotParams compute_prob_dist
 #' @returns an [array]
@@ -17,13 +18,22 @@ compute_prob_scores <- function(
     prob_dist = compute_prob_dist(
       biomarker_levels = biomarker_levels,
       ...),
+    id_var = "FXS ID",
     verbose = FALSE,
     ...
 )
 {
+  # Use first column as ID if id_var not found
+  if (!id_var %in% names(dataset)) {
+    id_var <- names(dataset)[1]
+    if (verbose) {
+      message("Using '", id_var, "' as ID variable")
+    }
+  }
+  
   prob_score_dims =
     list(
-      ID = dataset |> dplyr::pull("FXS ID"),
+      ID = dataset |> dplyr::pull(!!id_var),
       Biomarker = biomarker_varnames,
       model = ModelScores
     )
@@ -47,7 +57,7 @@ compute_prob_scores <- function(
     cur_confusion_matrix = prob_dist[[biomarker]]
     cur_observed_scores =
       dataset |>
-      pull(.data[[biomarker]], name = .data[["FXS ID"]]) |>
+      pull(.data[[biomarker]], name = .data[[!!id_var]]) |>
       as.character() |>
       stringr::str_replace_na()
 
