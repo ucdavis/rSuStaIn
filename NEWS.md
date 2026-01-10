@@ -1,17 +1,46 @@
-# rSuStaIn (development version)
+# rSuStaIn 0.1.0
 
-## Package Conversion
+## Major Changes - Refocused as General-Purpose Wrapper
 
-* Converted package from FXTAS-specific to general-purpose rSuStaIn wrapper (#1)
-  * Renamed package from `fxtas` to `rSuStaIn`
-  * Updated DESCRIPTION with new package name, description, and URLs
-  * Updated README to focus on general SuStaIn usage
-  * Updated all package references in R files, tests, vignettes, and examples
-  * Updated `install_pySuStaIn()` to use official ucl-pond/pySuStaIn repository
-  * Generalized `compute_prob_scores()` to accept `id_var` parameter instead of hardcoded "FXS ID"
-  * Retained FXTAS-specific functions for backward compatibility
+* **Removed all FXTAS-specific code** to focus package as general-purpose pySuStaIn wrapper
+  * Removed 193 FXTAS-specific R files (data cleaning, categorization, analysis functions)
+  * Removed FXTAS-specific examples, tests, and data processing scripts
+  * Removed `data-raw/`, `dev/`, and FXTAS analysis directories
+  * Package now contains only 45 core SuStaIn wrapper and utility files
 
-# fxtas (development version)
+## New Features
+
+* Added `run_ZscoreSustain()` wrapper for continuous biomarker data
+* Added `run_MixtureSustain()` wrapper for event-based disease progression modeling
+* Updated package description to reflect focus on general SuStaIn algorithms
+* Streamlined documentation focusing on three main algorithm types
+
+## Package Conversion (from previous commits)
+
+* Renamed package from `fxtas` to `rSuStaIn`
+* Updated DESCRIPTION with new name, description focusing on general SuStaIn wrapper functionality
+* Updated URLs to point to ucdavis/rSuStaIn repository
+* Renamed fxtas-package.R to rSuStaIn-package.R
+* Updated README to focus on general pySuStaIn wrapper usage
+* Added "Getting Started" vignette with examples
+* Updated `install_pySuStaIn()` to use official ucl-pond/pySuStaIn repository
+* Generalized `compute_prob_scores()` with `id_var` parameter
+* Fixed Codecov slug reference in workflows
+
+## Core Wrapper Functions
+
+The package now exports focused set of pySuStaIn wrappers:
+- `install_pySuStaIn()` - Install pySuStaIn Python package
+- `run_OSA()` - Run Ordinal SuStaIn Algorithm  
+- `run_ZscoreSustain()` - Run Z-score SuStaIn
+- `run_MixtureSustain()` - Run Mixture Model SuStaIn
+- `extract_results_from_pickle()` - Extract results from pickle files
+- Plus utilities for probability computation, result formatting, and visualization
+
+# fxtas 0.0.0.9000
+
+* Added a `NEWS.md` file to track changes to the package.
+
 
 ## Manuscript
 
