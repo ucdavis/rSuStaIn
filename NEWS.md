@@ -1,3 +1,16 @@
+# rSuStaIn (development version)
+
+## Package Conversion
+
+* Converted package from FXTAS-specific to general-purpose rSuStaIn wrapper (#1)
+  * Renamed package from `fxtas` to `rSuStaIn`
+  * Updated DESCRIPTION with new package name, description, and URLs
+  * Updated README to focus on general SuStaIn usage
+  * Updated all package references in R files, tests, vignettes, and examples
+  * Updated `install_pySuStaIn()` to use official ucl-pond/pySuStaIn repository
+  * Generalized `compute_prob_scores()` to accept `id_var` parameter instead of hardcoded "FXS ID"
+  * Retained FXTAS-specific functions for backward compatibility
+
 # fxtas (development version)
 
 ## Manuscript
