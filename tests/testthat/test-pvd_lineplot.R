@@ -1,6 +1,6 @@
 test_that("results are consistent", {
   output_path =
-    fs::path_package("extdata/sim_data", package = "fxtas")
+    fs::path_package("extdata/sim_data", package = "rSuStaIn")
 
   figs = extract_figs_from_pickle(
     output_folder = output_path,

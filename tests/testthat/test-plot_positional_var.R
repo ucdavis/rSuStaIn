@@ -3,7 +3,7 @@ test_that(
   code = {
 
     output_folder <-
-      fs::path_package("extdata/sim_data/", package = "fxtas")
+      fs::path_package("extdata/sim_data/", package = "rSuStaIn")
 
     results <-
       output_folder |>
@@ -25,7 +25,7 @@ test_that(
 test_that("results are consistent with three groups", {
 
   output_folder <-
-    fs::path_package("extdata/sim_data/", package = "fxtas")
+    fs::path_package("extdata/sim_data/", package = "rSuStaIn")
 
   results <-
     output_folder |>

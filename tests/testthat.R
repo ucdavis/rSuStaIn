@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/reference/test_package.html#special-files
 
 library(testthat)
-library(fxtas)
+library(rSuStaIn)
 
-test_check("fxtas")
+test_check("rSuStaIn")

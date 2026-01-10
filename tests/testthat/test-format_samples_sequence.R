@@ -1,6 +1,6 @@
 test_that("results are consistent", {
   output_folder <-
-    fs::path_package("extdata/sim_data/", package = "fxtas")
+    fs::path_package("extdata/sim_data/", package = "rSuStaIn")
 
   results <-
     output_folder |>

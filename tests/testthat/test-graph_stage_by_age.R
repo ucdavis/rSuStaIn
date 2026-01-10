@@ -1,7 +1,7 @@
 test_that("results are consistent", {
 
   output_path <-
-    fs::path_package("extdata/sim_data", package = "fxtas")
+    fs::path_package("extdata/sim_data", package = "rSuStaIn")
 
   results <- extract_results_from_pickle(
     n_s = 3,
