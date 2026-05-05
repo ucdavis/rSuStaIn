@@ -15,7 +15,6 @@ License: MIT + file LICENSE
 URL: https://github.com/ucdavis/rSuStaIn, https://ucdavis.github.io/rSuStaIn/
 BugReports: https://github.com/ucdavis/rSuStaIn/issues
 Imports: 
-    and,
     base,
     broom,
     cli,

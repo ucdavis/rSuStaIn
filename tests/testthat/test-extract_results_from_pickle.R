@@ -11,7 +11,7 @@ test_that(
 
     skip_if_not(dir.exists(pickle_folder))
 
-    skip_if_not("fxtas39" %in% reticulate::conda_list()$name)
+    skip_if_not(reticulate::py_module_available("pySuStaIn"))
 
     reticulate::py_require(
       packages = c(

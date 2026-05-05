@@ -1,10 +1,10 @@
 devtools::load_all()
-reticulate::use_condaenv("fxtas39", required = TRUE, conda = "auto")
+reticulate::use_condaenv("r-pySuStaIn", required = FALSE, conda = "auto")
 
 results <- extract_results_from_pickle(
   n_s = 3,
   dataset_name = "sample_data",
-  output_folder = fs::path_package("fxtas", "extdata/sim_data/"),
+  output_folder = fs::path_package("rSuStaIn", "extdata/sim_data/"),
   use_rds = FALSE,
   verbose = TRUE
 )
