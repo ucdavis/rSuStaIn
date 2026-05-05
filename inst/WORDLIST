@@ -8,6 +8,7 @@ CVIC
 Codecov
 Conda
 DESC
+FXTAS
 Eshaghi
 Extact
 FX
@@ -40,6 +41,7 @@ decapitalized
 dichotomizes
 et
 flextable
+fxtas
 ggplot
 github
 golem
@@ -57,6 +59,7 @@ pre
 preconfigured
 presaved
 pvd
+pySuStaIn
 rda
 rds
 readme
@@ -74,6 +77,8 @@ tibble
 tmp
 todo
 trichotomizes
+ucl
+ucdavis
 unlabelled
 varnames
 virtualenv
