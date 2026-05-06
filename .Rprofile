@@ -12,7 +12,7 @@ if (interactive()) {
   (require(devtools)) # loads usethis
   # (require(rsconnect)) # loads rsconnect
   # suppressMessages(require(dplyr))
-  require("pryr")
+  require("lobstr")
   # suppressMessages(require(lubridate))
   # suppressMessages(require(magrittr))
   (require(conflicted))
