@@ -28,6 +28,9 @@ jobs:
 
     timeout-minutes: 55
 
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Check if setup should be skipped
         id: check_label
@@ -141,7 +144,7 @@ jobs:
           Rscript -e "altdoc::render_docs(verbose = TRUE)" || true
           echo ""
 
-          echo "--- Rendering Readme.md from Readme.Rmd ---"
+          echo "--- Rendering README.md from README.Rmd ---"
           Rscript -e "rmarkdown::render('README.Rmd')" || true
           echo ""
 
