@@ -76,7 +76,6 @@ Suggests:
     tidyverse,
     tinyscholar,
     vdiffr,
-    veccompare,
     VennDiagram,
     viridis,
     webshot2,
