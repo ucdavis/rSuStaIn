@@ -78,6 +78,7 @@ jobs:
             website
           extra-packages: |
             d-morrison/altdoc@recursive-qmd-search
+            r-lib/pkgdown
             quarto-dev/quarto
             any::sessioninfo
             local::.
@@ -109,7 +110,11 @@ jobs:
           # If parallel = TRUE in render_docs()
           # future::plan(future::multicore)
           # sessioninfo::session_info() # already done in Install R dependencies
-          altdoc::render_docs(verbose = TRUE, parallel = FALSE, freeze = FALSE)
+          if (dir.exists("altdoc")) {
+            altdoc::render_docs(verbose = TRUE, parallel = FALSE, freeze = FALSE)
+          } else {
+            pkgdown::build_site()
+          }
         shell: Rscript {0}
 
       # If event is a tag, set subdir to '<tag_name>'
