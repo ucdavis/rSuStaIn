@@ -10,7 +10,7 @@
 \item{object}{a \code{SuStaIn_model} object}
 
 \item{...}{
-  Arguments passed on to \code{\link[=stage_barplot.default]{stage_barplot.default}}
+  Arguments passed on to \code{\link{stage_barplot.default}}
   \describe{
     \item{\code{xmax}}{largest x-value to display}
     \item{\code{include_type_0}}{\link{logical} whether to include Type 0 in the plot}
@@ -24,7 +24,7 @@ Plot estimated stage counts
 }
 \examples{
 output_path <-
-  fs::path_package("extdata/sim_data", package = "fxtas")
+  fs::path_package("extdata/sim_data", package = "rSuStaIn")
 
 results <-
   extract_results_from_pickle(

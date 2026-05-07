@@ -10,6 +10,7 @@ compute_prob_scores(
   biomarker_varnames = names(biomarker_levels),
   ModelScores = compute_ModelScores(biomarker_levels),
   prob_dist = compute_prob_dist(biomarker_levels = biomarker_levels, ...),
+  id_var = "FXS ID",
   verbose = FALSE,
   ...
 )
@@ -25,10 +26,12 @@ compute_prob_scores(
 
 \item{prob_dist}{a vector of probabilities of correctly classifying a biomarker level}
 
+\item{id_var}{name of the column containing patient/subject IDs (default: "FXS ID")}
+
 \item{verbose}{\code{\link[=logical]{logical()}} indicating whether to print debugging information}
 
 \item{...}{
-  Arguments passed on to \code{\link[=compute_prob_dist]{compute_prob_dist}}
+  Arguments passed on to \code{\link{compute_prob_dist}}
   \describe{
     \item{\code{prob_correct}}{the probability of correctly classifying the underlying biomarker level: p(obs = true)}
   }}

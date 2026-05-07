@@ -98,14 +98,6 @@ plot_positional_var(
 \item{synchronize_y_axes}{todo}
 
 \item{use_labels}{whether to use biomarker labels or variable names}
-
-\item{...}{
-  Arguments passed on to \code{\link[=autoplot.PF]{autoplot.PF}}
-  \describe{
-    \item{\code{object}}{a "PF" object (created by \code{compute_position_frequencies()})}
-    \item{\code{size.y}}{size of biomarker event labels}
-    \item{\code{color_label}}{label for legend color scale}
-  }}
 }
 \value{
 a \verb{"PVD_list} (a \link{list} of \code{PVD} objects from \code{\link[=autoplot.PF]{autoplot.PF()}})
