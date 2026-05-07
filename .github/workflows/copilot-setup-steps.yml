@@ -100,16 +100,3 @@ jobs:
           tinytex: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Verify development environment
-        if: steps.check_label.outputs.skip != 'true'
-        run: |
-          echo "=== R Development Environment Status ==="
-          Rscript .github/scripts/dev-sitrep.R
-
-          # Verify Quarto is installed and working
-          echo ""
-          echo "=== Quarto Status ==="
-          quarto --version
-          quarto check
-          quarto list tools
