@@ -2,7 +2,7 @@
 % Please edit documentation in R/onLoad.R
 \name{.onLoad}
 \alias{.onLoad}
-\title{Actions taken when \code{fxtas} is loaded}
+\title{Actions taken when \code{rSuStaIn} is loaded}
 \usage{
 .onLoad(...)
 }

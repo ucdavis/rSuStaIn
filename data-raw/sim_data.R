@@ -1,4 +1,4 @@
-file_path = fs::path_package("extdata/sim_data/synthetic_data.xlsx", package = "fxtas")
+file_path = fs::path_package("extdata/sim_data/synthetic_data.xlsx", package = "rSuStaIn")
 library(readxl)
 set.seed(1)
 sim_data =
@@ -15,7 +15,7 @@ sim_data =
 usethis::use_data(sim_data, overwrite = TRUE)
 
 sim_results_3s =
-  fs::path_package("extdata/sim_data/", package = "fxtas") |>
+  fs::path_package("extdata/sim_data/", package = "rSuStaIn") |>
   extract_results_from_pickle(n_s = 3,
                               output_folder = _,
                               use_rds = FALSE)

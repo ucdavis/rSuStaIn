@@ -11,10 +11,10 @@ extract_results_from_pickle(
   rda_filename = "data.RData",
   basename = paste0(dataset_name, "_subtype", n_s - 1),
   picklename = paste0(basename, ".pickle"),
-  format_results = TRUE,
+  format_results = FALSE,
   subtype_order = seq_len(n_s),
   use_rds = TRUE,
-  save_rds = format_results & identical(subtype_order, seq_len(n_s)),
+  save_rds = FALSE,
   verbose = FALSE,
   ...
 )
@@ -32,7 +32,7 @@ extract_results_from_pickle(
 
 \item{picklename}{the name of the pickle file to open}
 
-\item{format_results}{whether to apply \code{\link[=format_results_list]{format_results_list()}} to results before returning}
+\item{format_results}{whether to format results before returning}
 
 \item{subtype_order}{an \link{integer} vector of length \code{n_s},
 indicating how to order the subtypes}
@@ -43,15 +43,10 @@ indicating how to order the subtypes}
 
 \item{verbose}{whether to print messages}
 
-\item{...}{
-  Arguments passed on to \code{\link[=format_results_list]{format_results_list}}
-  \describe{
-    \item{\code{format_sst}}{should the subtype and stage table be formatted?
-(doesn't work for cross-validation fold pickle-files)}
-  }}
+\item{...}{additional arguments (currently unused)}
 }
 \value{
-a \code{"SuStaIn_model"} object (extends \code{\link[=list]{list()}})
+a list containing the extracted results
 }
 \description{
 Extract results from pickle file
@@ -59,7 +54,7 @@ Extract results from pickle file
 \examples{
 \dontrun{
 output_path <-
-  fs::path_package("extdata/sim_data", package = "fxtas")
+  fs::path_package("extdata/sim_data", package = "rSuStaIn")
 results <- extract_results_from_pickle(
   n = 3,
   output_folder = output_path, use_rds = FALSE

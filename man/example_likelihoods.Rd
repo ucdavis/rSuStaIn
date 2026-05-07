@@ -3,17 +3,20 @@
 \docType{data}
 \name{example_likelihoods}
 \alias{example_likelihoods}
-\title{example likelihoods matrix}
+\title{Example likelihoods from SuStaIn models}
 \format{
-An object of class \code{matrix} (inherits from \code{array}) with 100000 rows and 3 columns.
+A numeric matrix with 100,000 rows (iterations) and 3 columns (one for each model with 1, 2, or 3 subtypes).
+Each value represents the log-likelihood of the model at that iteration.
 }
 \source{
-\code{fxtas/data-raw/example_likelihoods.R}
+Generated using \code{data-raw/example_likelihoods.R} from simulated data
+in \code{inst/extdata/sim_data}.
 }
 \usage{
 example_likelihoods
 }
 \description{
-an example likelihoods matrix
+A matrix of log-likelihoods from example SuStaIn models with 1-3 subtypes.
+Generated from simulated data using the pySuStaIn package.
 }
 \keyword{datasets}

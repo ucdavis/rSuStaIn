@@ -1,5 +1,5 @@
-reticulate::use_condaenv("fxtas39", required = TRUE, conda = "auto")
-library(fxtas)
+reticulate::use_condaenv("r-pySuStaIn", required = FALSE, conda = "auto")
+library(rSuStaIn)
 
 
 size.y <- 8

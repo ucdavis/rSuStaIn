@@ -8,5 +8,5 @@ knitr:
 
 ```{r}
 #| label: setup
-library(fxtas)
+library(rSuStaIn)
 ```

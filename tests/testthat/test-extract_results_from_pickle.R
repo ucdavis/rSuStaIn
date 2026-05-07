@@ -5,13 +5,13 @@ test_that(
     skip_on_ci()
 
     output_path <-
-      fs::path_package("extdata/sim_data", package = "fxtas")
+      fs::path_package("extdata/sim_data", package = "rSuStaIn")
 
     pickle_folder <- fs::path(output_path, "pickle_files")
 
     skip_if_not(dir.exists(pickle_folder))
 
-    skip_if_not("fxtas39" %in% reticulate::conda_list()$name)
+    skip_if_not(reticulate::py_module_available("pySuStaIn"))
 
     reticulate::py_require(
       packages = c(

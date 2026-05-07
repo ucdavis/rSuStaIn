@@ -19,7 +19,7 @@ test_that("`extract_figs_from_pickle()` produces stable results", {
   testthat::announce_snapshot_file("pvd.svg")
   skip_if(no_pysustain)
 
-  fs::path_package("extdata/sim_data/", package = "fxtas") |>
+  fs::path_package("extdata/sim_data/", package = "rSuStaIn") |>
     extract_figs_from_pickle(output_folder = _,
                              n_s = 1,
                              use_rds = TRUE) |>

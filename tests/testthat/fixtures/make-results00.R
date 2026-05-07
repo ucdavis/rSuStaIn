@@ -1,5 +1,5 @@
 output_path =
-  fs::path_package("extdata/sim_data", package = "fxtas")
+  fs::path_package("extdata/sim_data", package = "rSuStaIn")
 
 pickle_folder <- fs::path(output_path, "pickle_files")
 

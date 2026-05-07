@@ -1,6 +1,6 @@
 pySuStaIn <- NULL # nolint: object_name_linter
 
-#' @title Actions taken when `fxtas` is loaded
+#' @title Actions taken when `rSuStaIn` is loaded
 #' @description
 #' based on https://rstudio.github.io/reticulate/articles/package.html
 #' #delay-loading-python-modules
@@ -10,17 +10,6 @@ pySuStaIn <- NULL # nolint: object_name_linter
 #' @returns [`NULL`], invisibly
 .onLoad <- function(...) {
   reticulate::use_virtualenv("r-pySuStaIn", required = FALSE)
-  # reticulate::py_require(
-  #   packages = c(
-  #     "git+https://github.com/ucl-pond/kde_ebm",
-  #     "git+https://github.com/d-morrison/pySuStaIn"
-  #   ),
-  #   python_version = "3.9"
-  # )
-  # reticulate::use_virtualenv("r-pySuStaIn", required = TRUE)
-
-  # reticulate::use_condaenv("r-pySuStaIn", required = TRUE)
-  # reticulate::use_condaenv("r-pySuStaIn", required = FALSE)
 
   pySuStaIn <<- # nolint: object_name_linter
     reticulate::import(

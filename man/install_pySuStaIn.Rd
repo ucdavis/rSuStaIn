@@ -9,6 +9,7 @@ install_pySuStaIn(
   python_version = "<3.10",
   method = "auto",
   pip = TRUE,
+  packages = "git+https://github.com/ucl-pond/pySuStaIn",
   ...
 )
 }
@@ -30,10 +31,11 @@ available on Windows.}
 when Conda environments are used, as otherwise packages will be installed
 from the Conda repositories.}
 
+\item{packages}{A vector of Python packages to install.}
+
 \item{...}{
   Arguments passed on to \code{\link[reticulate:py_install]{reticulate::py_install}}
   \describe{
-    \item{\code{packages}}{A vector of Python packages to install.}
     \item{\code{conda}}{The path to a \code{conda} executable. Use \code{"auto"} to allow
 \code{reticulate} to automatically find an appropriate \code{conda} binary.
 See \strong{Finding Conda} and \code{\link[reticulate:conda_binary]{conda_binary()}} for more details.}
@@ -48,7 +50,7 @@ incompatible--distribution channel. (\code{ignore_installed} is an alias for
   }}
 }
 \description{
-This function is a wrapper for \link[reticulate:conda-tools]{reticulate::conda_install}.
+This function is a wrapper for \link[reticulate:py_install]{reticulate::py_install}.
 Its implementation follows the instructions in:
 \itemize{
 \item https://rstudio.github.io/reticulate/articles/package.html
@@ -58,7 +60,7 @@ Its implementation follows the instructions in:
 \details{
 \subsection{\code{python_version}}{
 
-\code{pySuStaIn} and its dependency \code{kde_ebm} currently (2024-02-14) do not appear to be  with python >= 3.10.
+\code{pySuStaIn} and its dependency \code{kde_ebm} currently (2024-02-14) do not appear to be compatible with python >= 3.10.
 }
 
 \subsection{\code{pip}}{

@@ -77,7 +77,7 @@ jobs:
           files: ./cobertura.xml
           plugins: noop
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: UCD-IDDRC/fxtas
+          slug: ucdavis/rSuStaIn
 
       - name: Show testthat output
         if: always()

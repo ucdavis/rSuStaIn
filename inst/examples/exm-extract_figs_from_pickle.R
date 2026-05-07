@@ -1,5 +1,5 @@
 output_path <-
-  fs::path_package("extdata/sim_data", package = "fxtas")
+  fs::path_package("extdata/sim_data", package = "rSuStaIn")
 
 if (dir.exists(output_path)) {
   figs <- extract_figs_from_pickle(
