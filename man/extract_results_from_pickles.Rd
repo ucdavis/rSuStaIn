@@ -11,16 +11,16 @@ extract_results_from_pickles(
   rda_filename = "data.RData",
   basename = paste0(dataset_name, "_subtype", n_s - 1),
   picklename = paste0(basename, ".pickle"),
-  format_results = TRUE,
+  format_results = FALSE,
   subtype_order = seq_len(n_s),
   use_rds = TRUE,
-  save_rds = format_results & identical(subtype_order, seq_len(n_s)),
+  save_rds = FALSE,
   verbose = FALSE,
   ...
 )
 }
 \arguments{
-\item{n_s}{number of latent subgroups; helps construct \code{picklename}}
+\item{n_s}{vector of numbers of latent subgroups}
 
 \item{dataset_name}{root name of dataset}
 
@@ -30,9 +30,9 @@ extract_results_from_pickles(
 
 \item{basename}{base of pickle file name (without \code{.pickle} suffix)}
 
-\item{picklename}{the name of the pickle file to open}
+\item{picklename}{vector of pickle file names}
 
-\item{format_results}{whether to apply \code{\link[=format_results_list]{format_results_list()}} to results before returning}
+\item{format_results}{whether to format results before returning}
 
 \item{subtype_order}{an \link{integer} vector of length \code{n_s},
 indicating how to order the subtypes}
@@ -43,16 +43,11 @@ indicating how to order the subtypes}
 
 \item{verbose}{whether to print messages}
 
-\item{...}{
-  Arguments passed on to \code{\link{format_results_list}}
-  \describe{
-    \item{\code{format_sst}}{should the subtype and stage table be formatted?
-(doesn't work for cross-validation fold pickle-files)}
-  }}
+\item{...}{additional arguments (currently unused)}
 }
 \value{
-a \link{list} of \code{"SuStaIn_model"} objects (extends \code{\link[=list]{list()}})
+a list of results, one for each pickle file
 }
 \description{
-Extract results from multiple pickle files
+Vectorized version of \code{\link[=extract_results_from_pickle]{extract_results_from_pickle()}}
 }
