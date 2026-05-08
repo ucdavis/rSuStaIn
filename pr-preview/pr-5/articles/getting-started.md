@@ -1,0 +1,154 @@
+# Getting Started with rSuStaIn
+
+## Introduction
+
+The `rSuStaIn` package provides an R interface to the
+[pySuStaIn](https://github.com/ucl-pond/pySuStaIn) Python package for
+Subtype and Stage Inference (SuStaIn). SuStaIn is an unsupervised
+learning algorithm that identifies disease subtypes and stages from
+cross-sectional data.
+
+## Installation
+
+First, install the R package from GitHub:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("ucdavis/rSuStaIn")
+```
+
+Then, install the pySuStaIn Python package:
+
+``` r
+library(rSuStaIn)
+install_pySuStaIn()
+```
+
+This will create a Python virtual environment called “r-pySuStaIn” and
+install pySuStaIn and its dependencies.
+
+## Basic Usage
+
+### Preparing Your Data
+
+SuStaIn requires:
+
+1.  **Patient data**: A data frame with biomarker measurements for each
+    subject
+2.  **Biomarker levels**: A list defining the possible levels for each
+    biomarker
+3.  **Probability of correct classification**: Estimates of measurement
+    accuracy
+
+``` r
+# Example data structure
+patient_data <- data.frame(
+  ID = paste0("Patient_", 1:100),
+  biomarker1 = sample(c("Normal", "Mild", "Severe"), 100, replace = TRUE),
+  biomarker2 = sample(c("Normal", "Mild", "Severe"), 100, replace = TRUE),
+  biomarker3 = sample(c("Normal", "Mild", "Severe"), 100, replace = TRUE)
+)
+
+# Define biomarker levels
+biomarker_levels <- list(
+  biomarker1 = c("Normal", "Mild", "Severe"),
+  biomarker2 = c("Normal", "Mild", "Severe"),
+  biomarker3 = c("Normal", "Mild", "Severe")
+)
+```
+
+### Running the Ordinal SuStaIn Algorithm
+
+``` r
+# Run SuStaIn
+results <- run_OSA(
+  patient_data = patient_data,
+  biomarker_levels = biomarker_levels,
+  SuStaInLabels = names(biomarker_levels),
+  N_startpoints = 25,        # Number of startpoints for optimization
+  N_S_max = 3,               # Maximum number of subtypes
+  N_iterations_MCMC = 1e5,   # MCMC iterations
+  output_folder = "output",
+  dataset_name = "my_analysis"
+)
+```
+
+### Interpreting Results
+
+The results object contains:
+
+- `samples_sequence`: Sampled biomarker event sequences for each subtype
+- `samples_f`: Sampled subtype frequencies
+- `ml_subtype`: Maximum likelihood subtype assignment for each subject
+- `prob_ml_subtype`: Probability of maximum likelihood subtype
+- `ml_stage`: Maximum likelihood stage assignment for each subject
+- `prob_ml_stage`: Probability of maximum likelihood stage
+
+``` r
+# View subtype assignments
+head(results$ml_subtype)
+
+# View stage assignments
+head(results$ml_stage)
+```
+
+### Working with Pickle Files
+
+If you’ve already run SuStaIn in Python and have pickle files, you can
+extract the results:
+
+``` r
+results <- extract_results_from_pickle(
+  n_s = 3,                    # Number of subtypes
+  dataset_name = "my_data",
+  output_folder = "output"
+)
+```
+
+## Advanced Usage
+
+### Cross-Validation
+
+You can perform cross-validation to assess model fit:
+
+``` r
+results <- run_OSA(
+  patient_data = patient_data,
+  biomarker_levels = biomarker_levels,
+  SuStaInLabels = names(biomarker_levels),
+  N_startpoints = 25,
+  N_S_max = 3,
+  N_CV_folds = 10,           # Enable 10-fold cross-validation
+  output_folder = "output",
+  dataset_name = "my_analysis"
+)
+
+# Access CV results
+cv_results <- attr(results, "CV")
+```
+
+### Customizing Probability of Correct Classification
+
+You can specify custom probabilities for correct classification:
+
+``` r
+prob_correct <- compute_prob_correct(
+  biomarker_levels = biomarker_levels,
+  # Customize parameters here
+)
+
+results <- run_OSA(
+  patient_data = patient_data,
+  prob_correct = prob_correct,
+  biomarker_levels = biomarker_levels,
+  # ... other parameters
+)
+```
+
+## References
+
+Young, A. L., Vogel, J. W., Aksman, L. M., Wijeratne, P. A., Eshaghi,
+A., Oxtoby, N. P., … & Alzheimer’s Disease Neuroimaging Initiative.
+(2021). Ordinal SuStaIn: Subtype and Stage Inference for Clinical
+Scores, Visual Ratings, and Other Ordinal Data. Frontiers in Artificial
+Intelligence, 4, 613261.
