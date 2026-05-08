@@ -107,6 +107,7 @@ jobs:
           # QUARTO_LOG_LEVEL: DEBUG
         timeout-minutes: 20
         run: |
+          Sys.setenv(R_LIBS = paste(.libPaths(), collapse = .Platform$path.sep))
           # If parallel = TRUE in render_docs()
           # future::plan(future::multicore)
           # sessioninfo::session_info() # already done in Install R dependencies
