@@ -77,7 +77,6 @@ jobs:
             website
           extra-packages: |
             d-morrison/altdoc@recursive-qmd-search
-            r-lib/pkgdown
             quarto-dev/quarto
             any::sessioninfo
             local::.
@@ -108,14 +107,7 @@ jobs:
         timeout-minutes: 20
         run: |
           Sys.setenv(R_LIBS = paste(.libPaths(), collapse = .Platform$path.sep))
-          # If parallel = TRUE in render_docs()
-          # future::plan(future::multicore)
-          # sessioninfo::session_info() # already done in Install R dependencies
-          if (dir.exists("altdoc")) {
-            altdoc::render_docs(verbose = TRUE, parallel = FALSE, freeze = FALSE)
-          } else {
-            pkgdown::build_site(new_process = FALSE, install = FALSE, quiet = FALSE)
-          }
+          altdoc::render_docs(verbose = TRUE, parallel = FALSE, freeze = FALSE)
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀
