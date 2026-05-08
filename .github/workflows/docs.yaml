@@ -42,7 +42,6 @@ env:
 jobs:
   docs:
     runs-on: ubuntu-latest
-    if: ${{ !(github.event_name == 'pull_request' && github.event.action == 'closed') }}
     timeout-minutes: 30
     # Only restrict concurrency for non-PR jobs
     concurrency:
@@ -102,6 +101,7 @@ jobs:
           echo "Development environment setup complete!"
 
       - name: Build site
+        if: ${{ !(github.event_name == 'pull_request' && github.event.action == 'closed') }}
         # uncomment the next two lines to get full debugging output
         # env:
           # QUARTO_LOG_LEVEL: DEBUG
@@ -114,32 +114,9 @@ jobs:
           if (dir.exists("altdoc")) {
             altdoc::render_docs(verbose = TRUE, parallel = FALSE, freeze = FALSE)
           } else {
-            pkgdown::build_site(new_process = FALSE)
+            pkgdown::build_site(new_process = FALSE, install = FALSE, quiet = FALSE)
           }
         shell: Rscript {0}
-
-      # If event is a tag, set subdir to '<tag_name>'
-      - name: "[tag] Set documentation subdirectory"
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
-        run: |
-          echo "subdir=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
-      # If event is workflow_dispatch, set subdir to 'inputs.tag'
-      - name: '[dispatch] Set documentation subdirectory'
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          echo "subdir=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
-
-      # If event is a push to main (not a tag), set subdir to empty (deploy to root)
-      - name: "[main] Set documentation subdirectory to root"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          echo "PKGDOWN_DEV_MODE=release" >> $GITHUB_ENV
-          echo "subdir=docs" >> $GITHUB_ENV
-
-      - name: Debug subdir
-        run: |
-          echo "Subdir is set to: ${{ env.subdir }}"
 
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
@@ -148,7 +125,6 @@ jobs:
           clean-exclude: pr-preview
           branch: gh-pages # potentially different from ${{ env.PREVIEW_BRANCH }}
           folder: docs
-          # target-folder: $subdir # figure out later
 
       - name: Deploy PR Preview
         id: preview-step
