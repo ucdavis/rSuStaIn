@@ -107,6 +107,7 @@ jobs:
         timeout-minutes: 20
         run: |
           Sys.setenv(R_LIBS = paste(.libPaths(), collapse = .Platform$path.sep))
+          altdoc::setup_docs(tool = "quarto_website", overwrite = TRUE)
           altdoc::render_docs(verbose = TRUE, parallel = FALSE, freeze = FALSE)
         shell: Rscript {0}
 
