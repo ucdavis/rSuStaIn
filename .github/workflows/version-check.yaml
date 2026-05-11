@@ -7,6 +7,7 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/**'
+      - 'vignettes/**'
 
 name: Version increment check
 
