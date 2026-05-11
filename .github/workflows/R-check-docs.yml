@@ -3,19 +3,24 @@ on:
     branches: [main, master]
   pull_request:
 
+name: "Documentation check"
+
 jobs:
   docs-check:
-    name: Documentation check
     runs-on: ubuntu-latest
+    container:
+      image: rocker/verse:latest
     env:
       GITHUB_PAT: ${{ github.token }}
     steps:
-      - uses: actions/checkout@HEAD
+      - uses: actions/checkout@v4
 
-      - uses: r-lib/actions/setup-r@HEAD
+      - name: Configure git safe directory
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Install dependencies
-        uses: r-lib/actions/setup-r-dependencies@HEAD
+        uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::roxygen2
           needs: roxygen2

@@ -6,12 +6,14 @@ format:
 ---
 
 ```{r}
+#| eval: false
 library(rSuStaIn)
 ```
 
 ```{r}
 #| label: tbl-tab1
 #| tbl-cap: "test"
+#| eval: false
 patient_data = sim_data |>
   dplyr::filter(.data$Category == "Patient")
 table = sim_subtype_and_stage_table
