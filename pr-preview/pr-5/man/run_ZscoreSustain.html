@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.37">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>code_of_conduct – rSuStaIn</title>
+<title>run_zscoresustain – rSuStaIn</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,27 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-244ce1b9ec229af56bb6f90d24b3371d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-244ce1b9ec229af56bb6f90d24b3371d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -70,18 +100,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">rSuStaIn</span>
     </a>
   </div>
@@ -91,37 +116,31 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/ucdavis/rSuStaIn"> <i class="bi bi-github" role="img" aria-label="rSuStaIn GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./CODE_OF_CONDUCT.html">Code of conduct</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../man/build_rds_path.html">Reference</a></li><li class="breadcrumb-item"><a href="../man/run_ZscoreSustain.html">run_ZscoreSustain</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -133,368 +152,417 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/articles/demo-table-subtype-by-demographics.html" class="sidebar-item-text sidebar-link">
+  <a href="../vignettes/articles/demo-table-subtype-by-demographics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">demo table_subtype_by_demographics()</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/articles/test-quarto-article.html" class="sidebar-item-text sidebar-link">
+  <a href="../vignettes/articles/test-quarto-article.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test-quarto-article</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/articles/test-rmarkdown-article.html" class="sidebar-item-text sidebar-link">
+  <a href="../vignettes/articles/test-rmarkdown-article.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test-rmarkdown-article</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/getting-started.html" class="sidebar-item-text sidebar-link">
+  <a href="../vignettes/getting-started.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started with rSuStaIn</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/test-quarto-vignette.html" class="sidebar-item-text sidebar-link">
+  <a href="../vignettes/test-quarto-vignette.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test-quarto-vignette</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vignettes/test-rmarkdown-vignette.html" class="sidebar-item-text sidebar-link">
+  <a href="../vignettes/test-rmarkdown-vignette.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test-vignette</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Reference</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/build_rds_path.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/build_rds_path.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">build_rds_path</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/build_score_vals.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/build_score_vals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">build_score_vals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/compute_prob_correct2.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/compute_prob_correct2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">compute_prob_correct2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/compute_prob_dist.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/compute_prob_dist.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">compute_prob_dist</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/compute_prob_dist2.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/compute_prob_dist2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">compute_prob_dist2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/compute_prob_scores.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/compute_prob_scores.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">compute_prob_scores</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/compute_score_levels.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/compute_score_levels.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">compute_score_levels</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/cvic_sim_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/cvic_sim_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">cvic_sim_data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/dot-onLoad.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/dot-onLoad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">dot-onLoad</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/event_order_heatmap.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/event_order_heatmap.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">event_order_heatmap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/example_likelihoods.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/example_likelihoods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">example_likelihoods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/extract_cvic.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/extract_cvic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">extract_cvic</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/extract_results_from_pickle.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/extract_results_from_pickle.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">extract_results_from_pickle</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/extract_results_from_pickles.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/extract_results_from_pickles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">extract_results_from_pickles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/get_levels.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/get_levels.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">get_levels</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/install_pySuStaIn.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/install_pySuStaIn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">install_pySuStaIn</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/plot_cv_loglik.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/plot_cv_loglik.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">plot_cv_loglik</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/plot_CVIC.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/plot_CVIC.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">plot_CVIC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/run_and_save_OSA.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/run_and_save_OSA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">run_and_save_OSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/run_MixtureSustain.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/run_MixtureSustain.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">run_MixtureSustain</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/run_OSA_permuted.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/run_OSA_permuted.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">run_OSA_permuted</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/run_OSA.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/run_OSA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">run_OSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/run_ZscoreSustain.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/run_ZscoreSustain.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">run_ZscoreSustain</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/save_run_info.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/save_run_info.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">save_run_info</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/sim_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/sim_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">sim_data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/sim_subtype_and_stage_table.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/sim_subtype_and_stage_table.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">sim_subtype_and_stage_table</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/stage_barplot.default.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/stage_barplot.default.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">stage_barplot.default</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/stage_barplot.list.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/stage_barplot.list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">stage_barplot.list</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/stage_barplot.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/stage_barplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">stage_barplot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/stage_barplot.SuStaIn_model.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/stage_barplot.SuStaIn_model.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">stage_barplot.SuStaIn_model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/test_data_v1.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/test_data_v1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test_data_v1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/test_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/test_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test_data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./man/test_subtype_and_stage_table.html" class="sidebar-item-text sidebar-link">
+  <a href="../man/test_subtype_and_stage_table.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test_subtype_and_stage_table</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./NEWS.html" class="sidebar-item-text sidebar-link">
+  <a href="../NEWS.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">News</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./LICENSE.html" class="sidebar-item-text sidebar-link">
+  <a href="../LICENSE.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CODE_OF_CONDUCT.html" class="sidebar-item-text sidebar-link active">
+  <a href="../CODE_OF_CONDUCT.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code of conduct</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CITATION.html" class="sidebar-item-text sidebar-link">
+  <a href="../CITATION.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Citation</span></a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
     <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-link-45deg"></i></a></li></ul></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
-
-
-
-
-<section id="contributor-covenant-code-of-conduct" class="level1">
-<h1>Contributor Covenant Code of Conduct</h1>
-<section id="our-pledge" class="level2">
-<h2 class="anchored" data-anchor-id="our-pledge">Our Pledge</h2>
-<p>We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.</p>
-<p>We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.</p>
-</section>
-<section id="our-standards" class="level2">
-<h2 class="anchored" data-anchor-id="our-standards">Our Standards</h2>
-<p>Examples of behavior that contributes to a positive environment for our community include:</p>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../man/build_rds_path.html">Reference</a></li><li class="breadcrumb-item"><a href="../man/run_ZscoreSustain.html">run_ZscoreSustain</a></li></ol></nav></header><section id="run-z-score-sustain-algorithm" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="run-z-score-sustain-algorithm">Run Z-score SuStaIn Algorithm</h2>
+<section id="description" class="level3"><h3 class="anchored" data-anchor-id="description">Description</h3>
+<p>Wrapper for pySuStaIn’s ZscoreSustain class, which implements SuStaIn for continuous biomarker data using z-score models.</p>
+</section><section id="usage" class="level3"><h3 class="anchored" data-anchor-id="usage">Usage</h3>
+<pre><code class="language-R">run_ZscoreSustain(
+  data,
+  biomarker_labels,
+  N_startpoints = 25,
+  N_S_max = 3,
+  N_iterations_MCMC = 100000L,
+  output_folder = "output",
+  dataset_name = "zscore_data",
+  use_parallel_startpoints = FALSE,
+  seed = 1L,
+  ...
+)
+</code></pre>
+</section><section id="arguments" class="level3"><h3 class="anchored" data-anchor-id="arguments">Arguments</h3>
+<table role="presentation">
+<tbody><tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="data">data</code>
+</td>
+<td>
+<p>matrix or data.frame of biomarker measurements</p>
 <ul>
-<li>Demonstrating empathy and kindness toward other people</li>
-<li>Being respectful of differing opinions, viewpoints, and experiences</li>
-<li>Giving and gracefully accepting constructive feedback</li>
-<li>Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience</li>
-<li>Focusing on what is best not just for us as individuals, but for the overall community</li>
+<li>
+<p>rows = subjects, columns = biomarkers</p>
+</li>
 </ul>
-<p>Examples of unacceptable behavior include:</p>
-<ul>
-<li>The use of sexualized language or imagery, and sexual attention or advances of any kind</li>
-<li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
-<li>Public or private harassment</li>
-<li>Publishing others’ private information, such as a physical or email address, without their explicit permission</li>
-<li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
-</ul>
-</section>
-<section id="enforcement-responsibilities" class="level2">
-<h2 class="anchored" data-anchor-id="enforcement-responsibilities">Enforcement Responsibilities</h2>
-<p>Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.</p>
-<p>Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.</p>
-</section>
-<section id="scope" class="level2">
-<h2 class="anchored" data-anchor-id="scope">Scope</h2>
-<p>This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.</p>
-</section>
-<section id="enforcement" class="level2">
-<h2 class="anchored" data-anchor-id="enforcement">Enforcement</h2>
-<p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Douglas Morrison. All complaints will be reviewed and investigated promptly and fairly.</p>
-<p>All community leaders are obligated to respect the privacy and security of the reporter of any incident.</p>
-</section>
-<section id="enforcement-guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="enforcement-guidelines">Enforcement Guidelines</h2>
-<p>Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:</p>
-<section id="correction" class="level3">
-<h3 class="anchored" data-anchor-id="correction">1. Correction</h3>
-<p><strong>Community Impact</strong>: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.</p>
-<p><strong>Consequence</strong>: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.</p>
-</section>
-<section id="warning" class="level3">
-<h3 class="anchored" data-anchor-id="warning">2. Warning</h3>
-<p><strong>Community Impact</strong>: A violation through a single incident or series of actions.</p>
-<p><strong>Consequence</strong>: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.</p>
-</section>
-<section id="temporary-ban" class="level3">
-<h3 class="anchored" data-anchor-id="temporary-ban">3. Temporary Ban</h3>
-<p><strong>Community Impact</strong>: A serious violation of community standards, including sustained inappropriate behavior.</p>
-<p><strong>Consequence</strong>: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.</p>
-</section>
-<section id="permanent-ban" class="level3">
-<h3 class="anchored" data-anchor-id="permanent-ban">4. Permanent Ban</h3>
-<p><strong>Community Impact</strong>: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.</p>
-<p><strong>Consequence</strong>: A permanent ban from any sort of public interaction within the community.</p>
-</section>
-</section>
-<section id="attribution" class="level2">
-<h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
-<p>This Code of Conduct is adapted from the <a href="https://www.contributor-covenant.org">Contributor Covenant</a>, version 2.1, available at <a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct.html" class="uri">https://www.contributor-covenant.org/version/2/1/code_of_conduct.html</a>.</p>
-<p>Community Impact Guidelines were inspired by [Mozilla’s code of conduct enforcement ladder][https://github.com/mozilla/inclusion].</p>
-<p>For answers to common questions about this code of conduct, see the FAQ at <a href="https://www.contributor-covenant.org/faq" class="uri">https://www.contributor-covenant.org/faq</a>. Translations are available at <a href="https://www.contributor-covenant.org/translations" class="uri">https://www.contributor-covenant.org/translations</a>.</p>
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="biomarker_labels">biomarker_labels</code>
+</td>
+<td>
+character vector of biomarker names
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="N_startpoints">N_startpoints</code>
+</td>
+<td>
+integer number of startpoints for optimization (typically 25)
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="N_S_max">N_S_max</code>
+</td>
+<td>
+integer maximum number of subtypes
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="N_iterations_MCMC">N_iterations_MCMC</code>
+</td>
+<td>
+integer number of MCMC iterations (typically 1e5 or 1e6)
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="output_folder">output_folder</code>
+</td>
+<td>
+character where to save results
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="dataset_name">dataset_name</code>
+</td>
+<td>
+character name for output files
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="use_parallel_startpoints">use_parallel_startpoints</code>
+</td>
+<td>
+logical whether to parallelize optimization
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="seed">seed</code>
+</td>
+<td>
+integer random seed for reproducibility
+</td>
+</tr>
+<tr>
+<td style="white-space: collapse; font-family: monospace; vertical-align: top">
+<code id="...">…</code>
+</td>
+<td>
+additional arguments passed to pySuStaIn$ZscoreSustain()
+</td>
+</tr>
+</tbody></table></section><section id="value" class="level3"><h3 class="anchored" data-anchor-id="value">Value</h3>
+<p>a list containing SuStaIn results</p>
+</section><section id="examples" class="level3"><h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ucdavis/rSuStaIn">"rSuStaIn"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulated data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">n_subjects</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
+<span><span class="va">n_biomarkers</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n_subjects</span> <span class="op">*</span> <span class="va">n_biomarkers</span><span class="op">)</span>, </span>
+<span>               nrow <span class="op">=</span> <span class="va">n_subjects</span>, ncol <span class="op">=</span> <span class="va">n_biomarkers</span><span class="op">)</span></span>
+<span><span class="va">biomarker_labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Biomarker_"</span>, <span class="fl">1</span><span class="op">:</span><span class="va">n_biomarkers</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://UCD-IDDRC.github.io/fxtas/reference/run_ZscoreSustain.html">run_ZscoreSustain</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">data</span>,</span>
+<span>  biomarker_labels <span class="op">=</span> <span class="va">biomarker_labels</span>,</span>
+<span>  N_startpoints <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  N_S_max <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  N_iterations_MCMC <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>  output_folder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  dataset_name <span class="op">=</span> <span class="st">"zscore_example"</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -895,7 +963,6 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-
 
 
 
